@@ -20,7 +20,6 @@ public class Main {
             System.out.println("Значение переменной i равно "+i);
         }
     }
-
     public static void task2() {
         System.out.println("Задача 2.");
          /*Задача 2
@@ -33,12 +32,11 @@ public class Main {
         System.out.println("Задача 3.");
 /*Задача 3
 Выведите в консоль все четные числа от 0 до 17.*/
-        for (int i=0;i<=17;i++) {
-            if (i%2==0) {
+        for (int i=0;i<=17;i+=2) {
                 System.out.println("Четное число "+i);
             }
         }
-    }
+
     public static void task4 () {
         System.out.println("Задача 4.");
 /*Задача 4
@@ -52,13 +50,11 @@ public class Main {
     /*Задача 5
 Напишите программу, которая выводит в консоль все високосные года, начиная с 1904 года до 2096. В консоль результат
 должен выводиться в формате: «… год является високосным».    */
-        for (int year = 1904; year <=2096 ; year++) {
-            if (year%4==0) {
+        for (int year = 1904; year <=2096 ; year+=4) {
+            if (year%4==0 && year%100!=0 || year%400==0)
                 System.out.println( year+ " год является високосным");
             }
-
         }
-    }
     public static void task6 () {
         System.out.println("Задача 6.");
     /*Напишите программу, которая выводит в консоль последовательность чисел:
@@ -71,9 +67,7 @@ public class Main {
     public static void task7() {
         System.out.println("Задача 7.");
     /*Задача 7
-Напишите программу, которая выводит в консоль последовательность чисел:
-
-1 2 4 8 16 32 64 128 256 512*/
+Напишите программу, которая выводит в консоль последовательность чисел:1 2 4 8 16 32 64 128 256 512*/
         for (int i =1;i<=512;i=i*2) {
             System.out.println(i);
         }
@@ -82,7 +76,6 @@ public class Main {
         System.out.println("Задача 8.");
     /*Задача 8
 Посчитайте с помощью цикла for сумму годовых накоплений, если каждый месяц вы будете откладывать по 29 000 рублей «в банку».
-
 Выведите сумму накоплений за каждый месяц в консоль в формате: «Месяц …, сумма накоплений равна … рублей».*/
         int savings=0; //In Month
         for (int month=1;month<=12;month++){
@@ -95,13 +88,11 @@ public class Main {
     /*Задача 9
 Перепишите решение задачи выше при условии, что деньги вы откладывать будете не «в банку», а в банк под проценты — 12%
  годовых. Выведите сумму накоплений за каждый месяц в консоль в формате: «Месяц …, сумма накоплений равна … рублей». */
-
         double addSaves=29_000;
         double savings=0;
-
-
         for (int month=1;month<=12;month++) {
-            savings=addSaves+(savings*0.01*month)+savings;
+            //double onePecent=addSaves/100;
+            savings=savings+((savings+addSaves)*0.01*month);
             System.out.println("Месяц "+ month+",сумма накоплений равна "+savings+" рублей");
         }
     }
