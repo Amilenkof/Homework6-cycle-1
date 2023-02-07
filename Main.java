@@ -92,7 +92,7 @@ public class Main {
         double savings=0;
         for (int month=1;month<=12;month++) {
             //double onePecent=addSaves/100;
-            savings=savings+((savings+addSaves)*0.01*month);
+            savings=savings+addSaves+(savings*0.01);
             System.out.println("Месяц "+ month+",сумма накоплений равна "+savings+" рублей");
         }
     }
